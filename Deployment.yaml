@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-project
+
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: sample-project
+  template:
+    metadata:
+      labels:
+        app: sample-project
+    spec:
+      containers:
+      - name: sample-project
+        image: satriawh/sample-project:v2.0
+        imagePullPolicy: Never #Buat Lokal
+        # imagePullPolicy: Always #buat Production
+        ports:
+        - containerPort: 3000

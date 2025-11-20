@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  sample-project:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sample-project
+    ports:
+      - "3000:3000"
